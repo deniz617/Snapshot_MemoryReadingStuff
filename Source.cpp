@@ -1,5 +1,5 @@
 #include "Header.h"
-DWORD _getProcPID(char* procName) {  // Ýstenen Ýþlemin ID'sini geri veriyor. Bu id'ye ihtiyaç duyma sebebimiz ReadProcessMemory fonksiyonun veri okuyabilmek için buna ihtiyaç duymasý.
+DWORD _getProcPID(char* procName) {  // Ýstenen Ýþlemin ID'sini geri veriyor. Bu id'ye ihtiyaç duyma sebebimiz iþlemi OpenProcess ile açabilmek için fonksiyonun iþlem idsine ihtiyaç duymasý.
 	PROCESSENTRY32 proc; //PROCESS ENTRY 32 structure(yapý) daha fazla bilgi için: https://msdn.microsoft.com/en-us/library/windows/desktop/ms684839(v=vs.85).aspx
 	HANDLE sShot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); //CreateToolhelp32Snapshot var olan iþlemlerin bir nevi ekran görüntüsünü çeker, baþarýlý durumda 'ekran görüntüsüne' ait bir handle döndürür baþarýsýz olduðu zaman INVALID_HANDLE_VALUE deðerini döndürür
 	if (sShot == INVALID_HANDLE_VALUE) { //eðer dönüþ deðeri hatalýysa ~ hata oluþtumu diye kontrol
