@@ -74,7 +74,7 @@ DWORD _searchVal(int value,HANDLE hProc, DWORD startAddr = 0x400000, DWORD endAd
 
 int main() {
 	int temp = 0; 
-	DWORD pid = _getProcPID("Discord.exe");/*Discord.exe'nin iþlem id'sini alýyorum*/ DWORD baseAddr = _getProcModule("d3d9.dll", pid);/*d3d9.dll' modülünün(DirectX9) merkez adresini alýyorum Discord.exe yazýlsaydý Discord.exe nin merkez adresini alacaktýk buda genelde 0x400000 olur.*/
+	DWORD pid = _getProcPID("Discord.exe");/*Discord.exe iþleminin id'sini alýyorum*/ DWORD baseAddr = _getProcModule("d3d9.dll", pid);/*d3d9.dll' modülünün(DirectX9) merkez adresini alýyorum Discord.exe yazýlsaydý Discord.exe nin merkez adresini alacaktýk buda genelde 0x400000 olur.*/
 	printf_s("Result: Pid: 0x%X | baseAddr: 0x%X\n", pid, baseAddr); //bulduðumuz iþlem idsini ve merkez adresini bir yazdýralým bakalým hata varmý
 
 	goto2:printf_s("Enter search value:\n"); 
